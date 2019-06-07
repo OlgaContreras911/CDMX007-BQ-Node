@@ -36,13 +36,24 @@ app.get("/Burgers", (req, res) => {
   });
 });
 
-routes(app, err => {
-  if (err) {
-    throw err;
-  }
-
-  // Registro de "middleware" que maneja posibles errores
-  app.use(errorHandler);
-
-  app.listen(port, () => console.log(`App listening on port ${port}`));
+app.post("/Burgers/new", (req, res) => {
+  const newBurgers = new Burgers(req.body);
+  console.log(newBurgers);
+  newBurgers.save((err, dataLoaded) => {
+    if (err) {
+      return err;
+    }
+    res.send(dataLoaded);
+  });
 });
+
+// routes(app, err => {
+//   if (err) {
+//     throw err;
+//   }
+// });
+
+// Registro de "middleware" que maneja posibles errores
+app.use(errorHandler);
+
+app.listen(port, () => console.log(`App listening on port ${port}`));
