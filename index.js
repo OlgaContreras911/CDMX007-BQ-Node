@@ -47,6 +47,32 @@ app.post("/Burgers/new", (req, res) => {
   });
 });
 
+/*app.put("/new/update/:id", (req, res) => {
+  const newBurgers = new Burgers(req.body);
+  //let id = {
+  //_id: req.body.id
+  //};
+  console.log(newBurgers);
+
+  db.collection("new").update(
+    { id: newBurgers.id },
+    {
+      $set: {
+        name: req.body.name,
+        price: req.body.price,
+        quantity: req.body.quantity,
+        total: req.body.total
+      }
+    },
+    (err, result) => {
+      if (err) {
+        throw err;
+      }
+      res.send(result);
+    }
+  );
+});*/
+
 // routes(app, err => {
 //   if (err) {
 //     throw err;
