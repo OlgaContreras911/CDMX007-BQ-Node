@@ -1,6 +1,9 @@
 const auth = require("./auth");
 const users = require("./users");
+<<<<<<< HEAD
 const products = require("./products");
+=======
+>>>>>>> a7f063955fe3683ccbfe13a68c0280a54e350e87
 
 const root = (app, next) => {
   const pkg = app.get("pkg");
@@ -24,5 +27,11 @@ const register = (app, routes, cb) => {
   });
 };
 
+<<<<<<< HEAD
 module.exports = (app, next) =>
   register(app, [auth, users, products, root], next);
+=======
+module.exports = (app, next) => register(app, [auth, users, root], next);
+
+//
+>>>>>>> a7f063955fe3683ccbfe13a68c0280a54e350e87
