@@ -85,4 +85,4 @@ routes(app, err => {
   app.listen(port, () => console.log(`App listening on port ${port}`));
 });
 
-// Registro de "middleware" que maneja posibles errores
+// Registro de "middleware" que maneja posibles errores.
